@@ -1,0 +1,28 @@
+{
+  "name": "telegram-excel-sheets-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot that processes Excel files and updates Google Sheets",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node bot.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.61.0",
+    "axios": "^1.6.0",
+    "xlsx": "^0.18.5",
+    "googleapis": "^118.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "excel",
+    "google-sheets",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,66 @@
+const fs = require('fs');
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+console.log('🤖 Telegram Excel to Google Sheets Bot Setup');
+console.log('==========================================\n');
+
+async function askQuestion(question) {
+  return new Promise((resolve) => {
+    rl.question(question, (answer) => {
+      resolve(answer);
+    });
+  });
+}
+
+async function setup() {
+  try {
+    console.log('Please provide the following information:\n');
+    
+    // Get Telegram Bot Token
+    const botToken = await askQuestion('1. Enter your Telegram Bot Token (from @BotFather): ');
+    
+    // Get Google Sheets IDs
+    const spreadsheetA = await askQuestion('2. Enter Spreadsheet ID for file1.xlsx: ');
+    const spreadsheetB = await askQuestion('3. Enter Spreadsheet ID for file2.xlsx: ');
+    const spreadsheetC = await askQuestion('4. Enter Spreadsheet ID for file3.xlsx: ');
+    
+    // Update config.js
+    const configContent = `// Configuration file for the Telegram Bot
+// You can set these values directly or use environment variables
+
+module.exports = {
+  // Telegram Bot Token - Get this from @BotFather on Telegram
+  BOT_TOKEN: process.env.BOT_TOKEN || '${botToken}',
+  
+  // Google Sheets IDs - Get these from your Google Sheets URLs
+  SPREADSHEET_ID_A: process.env.SPREADSHEET_ID_A || '${spreadsheetA}',
+  SPREADSHEET_ID_B: process.env.SPREADSHEET_ID_B || '${spreadsheetB}', 
+  SPREADSHEET_ID_C: process.env.SPREADSHEET_ID_C || '${spreadsheetC}',
+  
+  // Google Sheets API Credentials path
+  GOOGLE_CREDENTIALS_PATH: process.env.GOOGLE_CREDENTIALS_PATH || './credentials.json'
+};`;
+
+    fs.writeFileSync('config.js', configContent);
+    
+    console.log('\n✅ Configuration saved to config.js');
+    console.log('\n📋 Next steps:');
+    console.log('1. Make sure you have credentials.json in the project root');
+    console.log('2. Run: npm start');
+    console.log('\n🔧 If you need to update credentials.json:');
+    console.log('- Download it from Google Cloud Console');
+    console.log('- Save it as credentials.json in this folder');
+    
+  } catch (error) {
+    console.error('❌ Setup failed:', error.message);
+  } finally {
+    rl.close();
+  }
+}
+
+setup();

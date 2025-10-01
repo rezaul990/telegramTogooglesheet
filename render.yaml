@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: telegram-excel-sheets-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: SPREADSHEET_ID_A
+        sync: false
+      - key: SPREADSHEET_ID_B
+        sync: false
+      - key: SPREADSHEET_ID_C
+        sync: false
+      - key: GOOGLE_CREDENTIALS_PATH
+        value: ./credentials.json
