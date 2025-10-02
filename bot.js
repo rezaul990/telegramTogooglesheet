@@ -4,6 +4,7 @@ const XLSX = require('xlsx');
 const { google } = require('googleapis');
 const fs = require('fs');
 const path = require('path');
+const http = require('http');
 
 // Configuration
 const config = require('./config');
@@ -267,6 +268,22 @@ async function startBot() {
     
     console.log('🤖 Telegram Bot started successfully!');
     console.log('📋 Ready to process Excel files and update Google Sheets');
+    
+    // Start HTTP server for Render (required for web services)
+    const PORT = process.env.PORT || 3000;
+    const server = http.createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({
+        status: 'Bot is running',
+        timestamp: new Date().toISOString(),
+        message: 'Telegram Excel to Google Sheets Bot is active'
+      }));
+    });
+    
+    server.listen(PORT, () => {
+      console.log(`🌐 HTTP server running on port ${PORT}`);
+      console.log(`📡 Health check available at: http://localhost:${PORT}`);
+    });
     
   } catch (error) {
     console.error('❌ Failed to start bot:', error.message);
