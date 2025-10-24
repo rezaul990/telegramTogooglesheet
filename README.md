@@ -18,6 +18,7 @@ The bot maps specific filename patterns to Google Sheets:
 - `OverdueAccountsDetails*.xlsx/.xls` → Spreadsheet ID A (Sheet1)
 - `Risk_Hire_Accounts*.xlsx/.xls` → Spreadsheet ID B (Sheet1)  
 - `PsdAreaARReceivable*.xlsx/.xls` → Spreadsheet ID C (Sheet1)
+- `Tr_vs_Achv_2023_All*.xlsx/.xls` → Spreadsheet ID D (Sheet1)
 
 ## Prerequisites
 
@@ -76,10 +77,11 @@ npm install
 
 2. Update `.env` with your values:
    ```env
-   BOT_TOKEN=your_telegram_bot_token_here
-   SPREADSHEET_ID_A=your_spreadsheet_id_for_file1
-   SPREADSHEET_ID_B=your_spreadsheet_id_for_file2
-   SPREADSHEET_ID_C=your_spreadsheet_id_for_file3
+BOT_TOKEN=your_telegram_bot_token_here
+SPREADSHEET_ID_A=your_spreadsheet_id_for_file1
+SPREADSHEET_ID_B=your_spreadsheet_id_for_file2
+SPREADSHEET_ID_C=your_spreadsheet_id_for_file3
+SPREADSHEET_ID_D=your_spreadsheet_id_for_file4
    GOOGLE_CREDENTIALS_PATH=./credentials.json
    ```
 
@@ -109,6 +111,7 @@ The bot should start and show:
    - `OverdueAccountsDetails*.xlsx/.xls` → Updates Spreadsheet A
    - `Risk_Hire_Accounts*.xlsx/.xls` → Updates Spreadsheet B
    - `PsdAreaARReceivable*.xlsx/.xls` → Updates Spreadsheet C
+   - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Updates Spreadsheet D
 4. The bot will process the file and update the corresponding Google Sheet
 5. You'll receive a confirmation message
 
@@ -187,6 +190,7 @@ telegram-excel-sheets-bot/
   - `OverdueAccountsDetails*.xlsx/.xls` → Spreadsheet A
   - `Risk_Hire_Accounts*.xlsx/.xls` → Spreadsheet B
   - `PsdAreaARReceivable*.xlsx/.xls` → Spreadsheet C
+  - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Spreadsheet D
 
 ### Google Sheets Integration
 
