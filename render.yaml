@@ -16,5 +16,7 @@ services:
         sync: false
       - key: SPREADSHEET_ID_D
         sync: false
+      - key: SPREADSHEET_ID_E
+        sync: false
       - key: GOOGLE_CREDENTIALS_PATH
         value: ./credentials.json
