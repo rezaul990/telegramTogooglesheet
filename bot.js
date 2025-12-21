@@ -22,7 +22,7 @@ function getSpreadsheetId(fileName) {
     return config.SPREADSHEET_ID_A;
   } else if (nameWithoutExt.includes('Risk_Hire_Accounts')) {
     return config.SPREADSHEET_ID_B;
-  } else if (nameWithoutExt.includes('DealerPsdAreaARReceivable')) {
+  } else if (nameWithoutExt.includes('Unique_Ac_Receivable_All')) {
     return config.SPREADSHEET_ID_F;
   } else if (nameWithoutExt.includes('PsdAreaARReceivable')) {
     return config.SPREADSHEET_ID_C;
@@ -165,7 +165,7 @@ bot.on('message', async (msg) => {
         '• PsdAreaARReceivable*.xlsx/.xls → Spreadsheet C\n' +
         '• Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
         '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
-        '• DealerPsdAreaARReceivable*.xlsx/.xls → Spreadsheet F\n' +
+        '• Unique_Ac_Receivable_All*.xlsx/.xls → Spreadsheet F\n' +
         '• EBS*.xlsx/.xls → Spreadsheet G'
       );
     } else if (messageText === '/help') {
@@ -177,7 +177,7 @@ bot.on('message', async (msg) => {
         '   • PsdAreaARReceivable*.xlsx/.xls → Spreadsheet C\n' +
         '   • Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
         '   • TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
-        '   • DealerPsdAreaARReceivable*.xlsx/.xls → Spreadsheet F\n' +
+        '   • Unique_Ac_Receivable_All*.xlsx/.xls → Spreadsheet F\n' +
         '   • EBS*.xlsx/.xls → Spreadsheet G\n\n' +
         '2. The bot will automatically:\n' +
         '   • Download and parse your Excel file\n' +
@@ -214,7 +214,7 @@ bot.on('message', async (msg) => {
         '• PsdAreaARReceivable*.xlsx/.xls → Spreadsheet C\n' +
         '• Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
         '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
-        '• DealerPsdAreaARReceivable*.xlsx/.xls → Spreadsheet F\n' +
+        '• Unique_Ac_Receivable_All*.xlsx/.xls → Spreadsheet F\n' +
         '• EBS*.xlsx/.xls → Spreadsheet G'
       );
       return;

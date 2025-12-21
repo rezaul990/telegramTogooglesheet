@@ -20,7 +20,7 @@ The bot maps specific filename patterns to Google Sheets:
 - `PsdAreaARReceivable*.xlsx/.xls` → Spreadsheet ID C (Sheet1)
 - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Spreadsheet ID D (Sheet1)
 - `TrAchvPeriodWiseOld2025*.xlsx/.xls` → Spreadsheet ID E (Sheet1)
-- `DealerPsdAreaARReceivable*.xlsx/.xls` → Spreadsheet ID F (Sheet1)
+- `Unique_Ac_Receivable_All*.xlsx/.xls` → Spreadsheet ID F (Sheet1)
 - `EBS*.xlsx/.xls` → Spreadsheet ID G (Sheet1)
 
 ## Prerequisites
@@ -119,7 +119,7 @@ The bot should start and show:
    - `PsdAreaARReceivable*.xlsx/.xls` → Updates Spreadsheet C
    - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Updates Spreadsheet D
    - `TrAchvPeriodWiseOld2025*.xlsx/.xls` → Updates Spreadsheet E
-   - `DealerPsdAreaARReceivable*.xlsx/.xls` → Updates Spreadsheet F
+   - `Unique_Ac_Receivable_All*.xlsx/.xls` → Updates Spreadsheet F
    - `EBS*.xlsx/.xls` → Updates Spreadsheet G
 4. The bot will process the file and update the corresponding Google Sheet
 5. You'll receive a confirmation message
@@ -205,7 +205,7 @@ telegram-excel-sheets-bot/
   - `PsdAreaARReceivable*.xlsx/.xls` → Spreadsheet C
   - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Spreadsheet D
   - `TrAchvPeriodWiseOld2025*.xlsx/.xls` → Spreadsheet E
-  - `DealerPsdAreaARReceivable*.xlsx/.xls` → Spreadsheet F
+  - `Unique_Ac_Receivable_All*.xlsx/.xls` → Spreadsheet F
   - `EBS*.xlsx/.xls` → Spreadsheet G
 
 ### Google Sheets Integration
