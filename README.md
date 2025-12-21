@@ -20,6 +20,8 @@ The bot maps specific filename patterns to Google Sheets:
 - `PsdAreaARReceivable*.xlsx/.xls` → Spreadsheet ID C (Sheet1)
 - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Spreadsheet ID D (Sheet1)
 - `TrAchvPeriodWiseOld2025*.xlsx/.xls` → Spreadsheet ID E (Sheet1)
+- `DealerPsdAreaARReceivable*.xlsx/.xls` → Spreadsheet ID F (Sheet1)
+- `EBS*.xlsx/.xls` → Spreadsheet ID G (Sheet1)
 
 ## Prerequisites
 
@@ -84,6 +86,8 @@ SPREADSHEET_ID_B=your_spreadsheet_id_for_file2
 SPREADSHEET_ID_C=your_spreadsheet_id_for_file3
 SPREADSHEET_ID_D=your_spreadsheet_id_for_file4
 SPREADSHEET_ID_E=your_spreadsheet_id_for_file5
+SPREADSHEET_ID_F=your_spreadsheet_id_for_file6
+SPREADSHEET_ID_G=your_spreadsheet_id_for_file7
 GOOGLE_CREDENTIALS_PATH=./credentials.json
    ```
 
@@ -115,6 +119,8 @@ The bot should start and show:
    - `PsdAreaARReceivable*.xlsx/.xls` → Updates Spreadsheet C
    - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Updates Spreadsheet D
    - `TrAchvPeriodWiseOld2025*.xlsx/.xls` → Updates Spreadsheet E
+   - `DealerPsdAreaARReceivable*.xlsx/.xls` → Updates Spreadsheet F
+   - `EBS*.xlsx/.xls` → Updates Spreadsheet G
 4. The bot will process the file and update the corresponding Google Sheet
 5. You'll receive a confirmation message
 
@@ -148,6 +154,8 @@ Add these environment variables in your Render service settings:
 - `SPREADSHEET_ID_C`: Spreadsheet ID for file3.xlsx
 - `SPREADSHEET_ID_D`: Spreadsheet ID for file4.xlsx
 - `SPREADSHEET_ID_E`: Spreadsheet ID for file5.xlsx
+- `SPREADSHEET_ID_F`: Spreadsheet ID for file6.xlsx
+- `SPREADSHEET_ID_G`: Spreadsheet ID for file7.xlsx
 - `GOOGLE_CREDENTIALS_PATH`: `./credentials.json`
 
 ### 4. Google Credentials on Render
@@ -197,6 +205,8 @@ telegram-excel-sheets-bot/
   - `PsdAreaARReceivable*.xlsx/.xls` → Spreadsheet C
   - `Tr_vs_Achv_2023_All*.xlsx/.xls` → Spreadsheet D
   - `TrAchvPeriodWiseOld2025*.xlsx/.xls` → Spreadsheet E
+  - `DealerPsdAreaARReceivable*.xlsx/.xls` → Spreadsheet F
+  - `EBS*.xlsx/.xls` → Spreadsheet G
 
 ### Google Sheets Integration
 

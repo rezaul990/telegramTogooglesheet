@@ -11,6 +11,8 @@ module.exports = {
   SPREADSHEET_ID_C: process.env.SPREADSHEET_ID_C || '1tDjDWzLe2dpa2LPHUoNd1WvyqatoFRj52yBoBy3WV7o',
   SPREADSHEET_ID_D: process.env.SPREADSHEET_ID_D || '16G6Uip6EJIT-D7I0SeX-sRpuVwb4CCQf8tchuudcSws',
   SPREADSHEET_ID_E: process.env.SPREADSHEET_ID_E || '12o2KXhqV7KSvX4L1IuDXaUJXSBjp_lvmRPJZzZgsJ_s',
+  SPREADSHEET_ID_F: process.env.SPREADSHEET_ID_F || '1nCP8lTJziOVEFByrzCQmLpnLgJpy4g5JehMs3Y1JE0Q',
+  SPREADSHEET_ID_G: process.env.SPREADSHEET_ID_G || '1E7sr9QflXhOn3adr443kVdxt-2eNRQtpfzegOq-7iHI',
   
   // Google Sheets API Credentials path
   GOOGLE_CREDENTIALS_PATH: process.env.GOOGLE_CREDENTIALS_PATH || './credentials.json'

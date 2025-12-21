@@ -22,12 +22,16 @@ function getSpreadsheetId(fileName) {
     return config.SPREADSHEET_ID_A;
   } else if (nameWithoutExt.includes('Risk_Hire_Accounts')) {
     return config.SPREADSHEET_ID_B;
+  } else if (nameWithoutExt.includes('DealerPsdAreaARReceivable')) {
+    return config.SPREADSHEET_ID_F;
   } else if (nameWithoutExt.includes('PsdAreaARReceivable')) {
     return config.SPREADSHEET_ID_C;
   } else if (nameWithoutExt.includes('Tr_vs_Achv_2023_All')) {
     return config.SPREADSHEET_ID_D;
   } else if (nameWithoutExt.includes('TrAchvPeriodWiseOld2025')) {
     return config.SPREADSHEET_ID_E;
+  } else if (nameWithoutExt.includes('EBS')) {
+    return config.SPREADSHEET_ID_G;
   }
   
   return null; // File not supported
@@ -160,7 +164,9 @@ bot.on('message', async (msg) => {
         '• Risk_Hire_Accounts*.xlsx/.xls → Spreadsheet B\n' +
         '• PsdAreaARReceivable*.xlsx/.xls → Spreadsheet C\n' +
         '• Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
-        '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E'
+        '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
+        '• DealerPsdAreaARReceivable*.xlsx/.xls → Spreadsheet F\n' +
+        '• EBS*.xlsx/.xls → Spreadsheet G'
       );
     } else if (messageText === '/help') {
       await bot.sendMessage(chatId,
@@ -170,7 +176,9 @@ bot.on('message', async (msg) => {
         '   • Risk_Hire_Accounts*.xlsx/.xls → Spreadsheet B\n' +
         '   • PsdAreaARReceivable*.xlsx/.xls → Spreadsheet C\n' +
         '   • Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
-        '   • TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n\n' +
+        '   • TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
+        '   • DealerPsdAreaARReceivable*.xlsx/.xls → Spreadsheet F\n' +
+        '   • EBS*.xlsx/.xls → Spreadsheet G\n\n' +
         '2. The bot will automatically:\n' +
         '   • Download and parse your Excel file\n' +
         '   • Update the corresponding Google Sheet\n' +
@@ -205,7 +213,9 @@ bot.on('message', async (msg) => {
         '• Risk_Hire_Accounts*.xlsx/.xls → Spreadsheet B\n' +
         '• PsdAreaARReceivable*.xlsx/.xls → Spreadsheet C\n' +
         '• Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
-        '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E'
+        '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
+        '• DealerPsdAreaARReceivable*.xlsx/.xls → Spreadsheet F\n' +
+        '• EBS*.xlsx/.xls → Spreadsheet G'
       );
       return;
     }
@@ -269,7 +279,7 @@ async function startBot() {
       throw new Error('BOT_TOKEN environment variable is required');
     }
     
-    if (!config.SPREADSHEET_ID_A || !config.SPREADSHEET_ID_B || !config.SPREADSHEET_ID_C || !config.SPREADSHEET_ID_D || !config.SPREADSHEET_ID_E) {
+    if (!config.SPREADSHEET_ID_A || !config.SPREADSHEET_ID_B || !config.SPREADSHEET_ID_C || !config.SPREADSHEET_ID_D || !config.SPREADSHEET_ID_E || !config.SPREADSHEET_ID_F || !config.SPREADSHEET_ID_G) {
       throw new Error('All SPREADSHEET_ID values are required in config.js');
     }
     
