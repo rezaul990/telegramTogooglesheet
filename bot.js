@@ -32,6 +32,8 @@ function getSpreadsheetId(fileName) {
     return config.SPREADSHEET_ID_E;
   } else if (nameWithoutExt.includes('EBS')) {
     return config.SPREADSHEET_ID_G;
+  } else if (nameWithoutExt.includes('Cor')) {
+    return config.SPREADSHEET_ID_H;
   }
   
   return null; // File not supported
@@ -166,7 +168,8 @@ bot.on('message', async (msg) => {
         '• Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
         '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
         '• Unique_Ac_Receivable_All*.xlsx/.xls → Spreadsheet F\n' +
-        '• EBS*.xlsx/.xls → Spreadsheet G'
+        '• EBS*.xlsx/.xls → Spreadsheet G\n' +
+        '• Cor*.xlsx/.xls → Spreadsheet H'
       );
     } else if (messageText === '/help') {
       await bot.sendMessage(chatId,
@@ -178,7 +181,8 @@ bot.on('message', async (msg) => {
         '   • Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
         '   • TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
         '   • Unique_Ac_Receivable_All*.xlsx/.xls → Spreadsheet F\n' +
-        '   • EBS*.xlsx/.xls → Spreadsheet G\n\n' +
+        '   • EBS*.xlsx/.xls → Spreadsheet G\n' +
+        '   • Cor*.xlsx/.xls → Spreadsheet H\n\n' +
         '2. The bot will automatically:\n' +
         '   • Download and parse your Excel file\n' +
         '   • Update the corresponding Google Sheet\n' +
@@ -215,7 +219,8 @@ bot.on('message', async (msg) => {
         '• Tr_vs_Achv_2023_All*.xlsx/.xls → Spreadsheet D\n' +
         '• TrAchvPeriodWiseOld2025*.xlsx/.xls → Spreadsheet E\n' +
         '• Unique_Ac_Receivable_All*.xlsx/.xls → Spreadsheet F\n' +
-        '• EBS*.xlsx/.xls → Spreadsheet G'
+        '• EBS*.xlsx/.xls → Spreadsheet G\n' +
+        '• Cor*.xlsx/.xls → Spreadsheet H'
       );
       return;
     }
@@ -279,7 +284,7 @@ async function startBot() {
       throw new Error('BOT_TOKEN environment variable is required');
     }
     
-    if (!config.SPREADSHEET_ID_A || !config.SPREADSHEET_ID_B || !config.SPREADSHEET_ID_C || !config.SPREADSHEET_ID_D || !config.SPREADSHEET_ID_E || !config.SPREADSHEET_ID_F || !config.SPREADSHEET_ID_G) {
+    if (!config.SPREADSHEET_ID_A || !config.SPREADSHEET_ID_B || !config.SPREADSHEET_ID_C || !config.SPREADSHEET_ID_D || !config.SPREADSHEET_ID_E || !config.SPREADSHEET_ID_F || !config.SPREADSHEET_ID_G || !config.SPREADSHEET_ID_H) {
       throw new Error('All SPREADSHEET_ID values are required in config.js');
     }
     

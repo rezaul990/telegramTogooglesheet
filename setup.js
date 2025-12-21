@@ -32,6 +32,7 @@ async function setup() {
     const spreadsheetE = await askQuestion('6. Enter Spreadsheet ID for file5.xlsx: ');
     const spreadsheetF = await askQuestion('7. Enter Spreadsheet ID for file6.xlsx: ');
     const spreadsheetG = await askQuestion('8. Enter Spreadsheet ID for file7.xlsx: ');
+    const spreadsheetH = await askQuestion('9. Enter Spreadsheet ID for file8.xlsx: ');
     
     // Update config.js
     const configContent = `// Configuration file for the Telegram Bot
@@ -49,6 +50,7 @@ module.exports = {
   SPREADSHEET_ID_E: process.env.SPREADSHEET_ID_E || '${spreadsheetE}',
   SPREADSHEET_ID_F: process.env.SPREADSHEET_ID_F || '${spreadsheetF}',
   SPREADSHEET_ID_G: process.env.SPREADSHEET_ID_G || '${spreadsheetG}',
+  SPREADSHEET_ID_H: process.env.SPREADSHEET_ID_H || '${spreadsheetH}',
   
   // Google Sheets API Credentials path
   GOOGLE_CREDENTIALS_PATH: process.env.GOOGLE_CREDENTIALS_PATH || './credentials.json'
