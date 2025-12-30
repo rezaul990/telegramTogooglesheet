@@ -22,6 +22,8 @@ function getSpreadsheetId(fileName) {
     return config.SPREADSHEET_ID_A;
   } else if (nameWithoutExt.includes('Risk_Hire_Accounts')) {
     return config.SPREADSHEET_ID_B;
+  } else if (nameWithoutExt.includes('HireTargetAccounts')) {
+    return config.SPREADSHEET_ID_I;
   } else if (nameWithoutExt.includes('Unique_Ac_Receivable_All')) {
     return config.SPREADSHEET_ID_F;
   } else if (nameWithoutExt.includes('PsdAreaARReceivable')) {
@@ -284,7 +286,7 @@ async function startBot() {
       throw new Error('BOT_TOKEN environment variable is required');
     }
     
-    if (!config.SPREADSHEET_ID_A || !config.SPREADSHEET_ID_B || !config.SPREADSHEET_ID_C || !config.SPREADSHEET_ID_D || !config.SPREADSHEET_ID_E || !config.SPREADSHEET_ID_F || !config.SPREADSHEET_ID_G || !config.SPREADSHEET_ID_H) {
+    if (!config.SPREADSHEET_ID_A || !config.SPREADSHEET_ID_B || !config.SPREADSHEET_ID_C || !config.SPREADSHEET_ID_D || !config.SPREADSHEET_ID_E || !config.SPREADSHEET_ID_F || !config.SPREADSHEET_ID_G || !config.SPREADSHEET_ID_H || !config.SPREADSHEET_ID_I) {
       throw new Error('All SPREADSHEET_ID values are required in config.js');
     }
     
